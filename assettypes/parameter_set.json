@@ -1,0 +1,1 @@
+{"description":"parameter_set","fields":[{"key":"dummy_field","type":"string","facet":false,"is_array":false,"is_searchable_across_types":false}],"external_asset_preview":{},"relationships":[],"global_search_searchable":[],"attribute_only":false,"is_column_custom_attribute":false,"can_have_image":false,"version":1,"name":"parameter_set","scope":"GLOBAL","allow_decorators":true}

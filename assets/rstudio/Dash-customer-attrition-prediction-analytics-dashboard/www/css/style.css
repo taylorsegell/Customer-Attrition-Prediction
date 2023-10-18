@@ -1,0 +1,58 @@
+h2 {
+  font-weight: bold;
+  color: #1c2a48;
+    
+}
+
+img {
+  border: none;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0);
+}
+
+button[id*="client-btn-"] {
+  border: 1px solid;
+  background-color: rgb(158, 158, 158);
+  background-color: rgba(158, 158, 158, 0.1);
+}
+
+.panel {
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  margin: 20px;
+}
+
+button[id*="client-btn-"] h4 {
+  font-style: italic;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.navbar {
+  background-color:#1c2a48;
+  font-family: Bookman;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bolder;
+  font-size: 26px;
+  margin-right: 40px;
+}
+
+.navbar-nav {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+
+th, td{
+padding: 15px !important;
+border: none !important;
+border-bottom: 1px solid #ddd !important;
+}
+
+th {
+text-align: center !important;
+background-color: rgb(158, 158, 158)  !important;
+background-color: rgba(158, 158, 158, 0.1)  !important;
+}

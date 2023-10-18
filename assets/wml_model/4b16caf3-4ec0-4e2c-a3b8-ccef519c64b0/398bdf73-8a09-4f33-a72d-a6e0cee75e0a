@@ -1,0 +1,63 @@
+{
+  "doc_type": "pipeline",
+  "pipelines": [{
+    "id": "4c18d7b0-0301-40f3-b8f8-0ee0204d5bb2",
+    "nodes": [{
+      "id": "automl",
+      "op": "wml-http-score",
+      "outputs": [{
+        "id": "automl"
+      }],
+      "parameters": {
+        "output_logs": true,
+        "incremental_learning": false,
+        "input_file_separator": ",",
+        "stage_flag": true,
+        "optimization": {
+          "learning_type": "classification",
+          "label": "TARGET",
+          "global_stage_include_batched_ensemble_estimators": ["BatchedTreeEnsembleClassifier(RandomForestClassifier)", "BatchedTreeEnsembleClassifier(ExtraTreesClassifier)", "BatchedTreeEnsembleClassifier(XGBClassifier)", "BatchedTreeEnsembleClassifier(LGBMClassifier)", "BatchedTreeEnsembleClassifier(SnapRandomForestClassifier)", "BatchedTreeEnsembleClassifier(SnapBoostingMachineClassifier)"],
+          "max_num_daub_ensembles": 2,
+          "compute_pipeline_notebooks_flag": true,
+          "run_cognito_flag": true,
+          "daub_adaptive_subsampling_max_mem_usage": 9000000000,
+          "holdout_param": 0.1,
+          "daub_give_priority_to_runtime": 1,
+          "cv_num_folds": 3,
+          "positive_label": 1,
+          "scorer_for_ranking": "accuracy"
+        },
+        "wml_status": {
+          "url": "https://internal-nginx-svc.cpd-instance.svc:12443/v4_private/trainings"
+        },
+        "storage": {
+          "exchange": "training-prod",
+          "url": "amqps://admin:9ifamfdy7b3qdlw6cqvF9db4@rabbitmq-ha.cpd-instance.svc.cluster.local:5671"
+        },
+        "n_parallel_data_connections": 4,
+        "one_vs_all_file": true
+      },
+      "runtime_ref": "autoai",
+      "type": "execution_node"
+    }],
+    "runtime_ref": "hybrid"
+  }],
+  "primary_pipeline": "4c18d7b0-0301-40f3-b8f8-0ee0204d5bb2",
+  "runtimes": [{
+    "app_data": {
+      "wml_data": {
+        "hardware_spec": {
+          "id": "c076e82c-b2a7-4d20-9c0f-1f0c2fdf5a24",
+          "name": "M"
+        },
+        "software_spec": {
+          "name": "autoai-kb_rt23.1-py3.10"
+        }
+      }
+    },
+    "id": "autoai",
+    "name": "auto_ai.kb",
+    "version": "sha256:e4042f1649a04eda0f7db203e8e2508438685ec76f5b9a8ff4ad09a923cce4e0"
+  }],
+  "version": "2.0"
+}

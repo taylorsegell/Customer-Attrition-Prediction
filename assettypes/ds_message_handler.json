@@ -1,0 +1,1 @@
+{"description":"ds_message_handler","fields":[{"key":"dummy_field","type":"string","facet":false,"is_array":false,"is_searchable_across_types":false}],"relationships":[],"global_search_searchable":[],"attribute_only":false,"is_column_custom_attribute":false,"can_have_image":false,"version":1,"name":"ds_message_handler","scope":"GLOBAL","allow_decorators":true}
